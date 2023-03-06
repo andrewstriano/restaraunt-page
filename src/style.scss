@@ -10,8 +10,8 @@ $shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
 body {
   font-family: Lato, sans-serif;
   position: relative;
-  height: 200vh;
   padding: 0;
+  padding-bottom: 10px;
   margin: 0;
 }
 .header {
@@ -103,6 +103,23 @@ body {
         outline: none;
         box-shadow: $shadow;
       }
+      .submitButton{
+        max-width: 200px;
+        margin: 2rem;
+        color: $accent;
+        background-color: white;
+        transition: all .2s;
+      }
+      .submitButton:hover{
+        transform: scale(1.1);
+        box-shadow: $shadow;
+        background-color: #cd3333;
+        color: white;
+      }
+      .submitButton:active{
+        transform: scale(.9);
+        background-color: #a72929;
+      }
     }
   }
 }
@@ -111,6 +128,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  .hero{
+    background-color: #a72929;
+    width: 100%;
+    height: 400px;
+    .burgerPic{
+      height: 100%;
+    }
+  }
   .aboutUs {
     width: 95%;
     max-width: 500px;

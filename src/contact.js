@@ -11,6 +11,7 @@ const formList = document.createElement("ul");
 const firstLi = document.createElement("li");
 const secondLi = document.createElement("li");
 const thirdLi = document.createElement("li");
+const fourthLi = document.createElement("li");
 
 const nameLabel = document.createElement("label");
 nameLabel.setAttribute("for", "name");
@@ -41,7 +42,13 @@ commentInput.setAttribute("rows", "10");
 commentInput.setAttribute("placeholder", "Comment");
 thirdLi.append(commentLabel, commentInput);
 
-formList.append(firstLi, secondLi, thirdLi);
+const submitbutton = document.createElement('input');
+submitbutton.setAttribute("type", "submit")
+submitbutton.classList.add("submitButton")
+submitbutton.addEventListener("click", loadContact)
+fourthLi.append(submitbutton);
+
+formList.append(firstLi, secondLi, thirdLi, fourthLi);
 formContainer.append(formList);
 
 function loadContact() {
