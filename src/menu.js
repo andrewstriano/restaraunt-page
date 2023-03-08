@@ -2,6 +2,7 @@ import { menuLink, mainContent, homeLink, contactLink } from "./header";
 import breakfast from "./images/breakfast_menu.jpg";
 import lunch from "./images/lunch_menu.jpg";
 import dinner from "./images/dinner_menu.jpg";
+import loadFooter from "./footer";
 
 const bContainer = document.createElement("div");
 bContainer.classList.add("menuContainer");
@@ -36,8 +37,10 @@ function loadMenu() {
   contactLink.classList.remove("currentPage");
   menuLink.classList.add("currentPage");
   mainContent.append(bContainer, lContainer, dContainer);
+  loadFooter();
 }
 
 menuLink.addEventListener("click", loadMenu);
 
 export default { menuLink };
+export { loadMenu };

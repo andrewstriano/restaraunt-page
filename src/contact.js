@@ -1,4 +1,5 @@
 import { contactLink, homeLink, mainContent, menuLink } from "./header";
+import loadFooter from "./footer";
 
 const formContainer = document.createElement("div");
 formContainer.classList.add("formContainer");
@@ -42,11 +43,11 @@ commentInput.setAttribute("rows", "10");
 commentInput.setAttribute("placeholder", "Comment");
 thirdLi.append(commentLabel, commentInput);
 
-const submitbutton = document.createElement('input');
-submitbutton.setAttribute("type", "submit")
-submitbutton.classList.add("submitButton")
-submitbutton.addEventListener("click", loadContact)
-fourthLi.append(submitbutton);
+const submitButton = document.createElement("input");
+submitButton.setAttribute("type", "submit");
+submitButton.classList.add("submitButton");
+
+fourthLi.append(submitButton);
 
 formList.append(firstLi, secondLi, thirdLi, fourthLi);
 formContainer.append(formList);
@@ -57,7 +58,8 @@ function loadContact() {
   menuLink.classList.remove("currentPage");
   contactLink.classList.add("currentPage");
   mainContent.append(formContainer);
+  loadFooter();
 }
 contactLink.addEventListener("click", loadContact);
-
+submitButton.addEventListener("click", loadContact);
 export default { contactLink };
